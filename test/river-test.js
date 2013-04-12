@@ -89,31 +89,4 @@ describe('River Index Method', function(){
       
     });
   });
-
-  // it('should be able to index to alternative index', function(done){
-  //   Mention.findOne({message:'I know capoeira!'}, function(err, doc){
-  //     doc.message = 'I know samba!';
-  //     doc.index('public_Mentions', function(){
-  //       setTimeout(function(){
-  //         esClient.search({index: 'public_Mentions', query:'know'}, function(err, results, res){
-  //           res.hits.hits[0]._source.message.should.eql('I know samba!');
-  //           done();
-  //         });
-  //       }, 1100);
-  //     });
-  //   });
-  // });
-  // it('should be able to index to alternative index and type', function(done){
-  //   Mention.findOne({message:'I know capoeira!'}, function(err, doc){
-  //     doc.message = 'I know samba!';
-  //     doc.index('public_Mentions', 'utterings', function(){
-  //       setTimeout(function(){
-  //         esClient.search({index: 'public_Mentions', type: 'utterings', query:'know'}, function(err, results, res){
-  //           res.hits.hits[0]._source.message.should.eql('I know samba!');
-  //           done();
-  //         });
-  //       }, 1100);
-  //     });
-  //   });
-  // });
 });

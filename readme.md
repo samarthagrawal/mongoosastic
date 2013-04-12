@@ -352,6 +352,11 @@ var options = {
   }
 }
 ```
+to create your River only call
+```javascript
+YourModel.river(function() {})
+```
+
 ## Contributing
 Pull requests are always welcome as long as an accompanying test case is
 associated. 
