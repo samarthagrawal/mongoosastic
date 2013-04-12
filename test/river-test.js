@@ -47,15 +47,14 @@ describe('River Index Method', function(){
 
     // Connect Mongoose
     mongoose.connect(config.mongoUrl, function() {      
-
-    // Create Index
-    new Mention().index();
-
-      // Add Record Direct on Mongo 
-      mongoose.connection.collections.mentions.insert(fixture, function(err, doc) {
-        if (err) console.log(err);
-        done();
-      }) 
+      // Create River
+      Mention.river(function() {
+        // Add Record Direct on Mongo 
+        mongoose.connection.collections.mentions.insert(fixture, function(err, doc) {
+          if (err) console.log(err);
+          done();
+        })         
+      });
     });
 
   });
