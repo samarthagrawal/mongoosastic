@@ -15,14 +15,14 @@ var Mentionschema = new Schema({
   , message: String
 });
 
-// Configurations for River
-var options = {
-  useRiver: { 
-    db: "es-test",
-    collection: "mentions",
-    gridfs: false 
-  }
-}
+// // Configurations for River
+// var options = {
+//   useRiver: { 
+//     db: "es-test",
+//     collection: "mentions",
+//     gridfs: false 
+//   }
+// }
 
 // Configuration Default
 var options = {
