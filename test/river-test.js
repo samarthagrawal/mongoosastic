@@ -66,14 +66,14 @@ describe('River Index Method', function(){
 
       mongoose.connection.collections.mentions.remove(function() {
         esClient.deleteIndex('mentions',  function() {
-          esClient.deleteRiver('es-test', 'mongoose', function() {
+          esClient.deleteRiver('mentions', 'mongodb', function() {
             mongoose.disconnect();
             done();
           });      
         });
       });
 
-    }, 2100);
+    }, 4100);
 
   });
 
@@ -85,7 +85,7 @@ describe('River Index Method', function(){
             res.hits.hits[0]._source.message.should.eql(doc.message);
             done();
           });
-        }, 1100);
+        }, 2100);
       
     });
   });
