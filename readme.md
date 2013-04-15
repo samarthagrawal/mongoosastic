@@ -345,9 +345,7 @@ Advanced Configurations
 
 ```javascript
 var options = {
-  useRiver: { 
-    db: "ḿymongodb",
-    collection: "mentions",
+  useRiver: {   
     gridfs: false/true 
   }
 }
