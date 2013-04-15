@@ -23,6 +23,7 @@
     "node": ">= 0.6.0"
   },
   "scripts":{
-    "test":"mocha -R spec -t 15000 -b"
+    "start":"mocha -R spec -t 15000 -b"
+    , "test":"mocha -t 15000 -b test/river-test.js"
   }
 }

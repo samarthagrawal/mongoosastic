@@ -18,8 +18,6 @@ var Mentionschema = new Schema({
 // // Configurations for River
 // var options = {
 //   useRiver: { 
-//     db: "es-test",
-//     collection: "mentions",
 //     gridfs: false 
 //   }
 // }
@@ -65,8 +63,8 @@ describe('River Index Method', function(){
     setTimeout(function(){
 
       mongoose.connection.collections.mentions.remove(function() {
-        esClient.deleteIndex('mentions',  function() {
-          esClient.deleteRiver('mentions', 'mongodb', function() {
+        esClient.deleteRiver('mention', 'mentions', function() {
+          esClient.deleteIndex('mentions',  function() {
             mongoose.disconnect();
             done();
           });      
