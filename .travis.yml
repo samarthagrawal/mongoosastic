@@ -5,11 +5,9 @@ node_js:
 before_install:
   - sudo service elasticsearch start
   - sleep 3
+  - sudo mongod 
+  - sleep 3
 
 notifications:
   email:
     - james.r.carr@gmail.com
-
-services:
-  - mongod
-  - elasticsearch
