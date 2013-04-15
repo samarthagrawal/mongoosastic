@@ -5,8 +5,7 @@ var mongoose  = require('mongoose')
   , Schema    = mongoose.Schema
   , ObjectId  = Schema.ObjectId
   , esClient  = new(require('elastical').Client)
-  , mongoosastic = require('../lib/mongoosastic')
-  , http      = require('http');
+  , mongoosastic = require('../lib/mongoosastic');
 
 // -- simplest indexing... index all fields
 var Mentionschema = new Schema({
@@ -51,27 +50,6 @@ describe('River Index Method', function(){
         // Add Record Direct on Mongo 
         mongoose.connection.collections.mentions.insert(fixture, function(err, doc) {
           if (err) console.log(err);
-          http.request({
-              host: 'localhost',
-              path: '/_nodes/stats/fs',
-              port: '9200',
-              method: 'GET'
-            }, function(response) {
-            var str = '';
-
-            response.on('data', function (chunk) {
-              str += chunk;
-            });
-
-            response.on('end', function () {
-              console.log('*******************************');              
-              var es = JSON.parse(str)
-              for(var k in es.nodes) {                
-                console.log(es.nodes[k].fs.data[0].path);  
-              }
-              console.log('*******************************');              
-            });
-          }).end();
           done();
         })         
       });
