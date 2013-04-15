@@ -14,11 +14,15 @@ before_install:
   - sudo mongod --replSet foo --port 27018 -fork --quiet --dbpath /data/r1 --logpath /var/log/mongodb1.log 
   - sudo mongod --replSet foo --port 27019 -fork --quiet --dbpath /data/r2 --logpath /var/log/mongodb2.log 
   - sleep 3
-  - sudo plugin -install elasticsearch/elasticsearch-mapper-attachments/1.6.0
+  - echo 'rs.initiate()' | mongo
   - sleep 3
-  - sudo plugin-url https://github.com/downloads/richardwilly98/elasticsearch-river-mongodb/elasticsearch-river-mongodb-1.6.4.zip -install river-mongodb
+  - elasticsearch
   - sleep 3
-  - sudo service elasticsearch start
+  - sudo $ES_HOME/bin/plugin -install elasticsearch/elasticsearch-mapper-attachments/1.6.0
+  - sleep 3
+  - sudo $ES_HOME/bin/plugin-url https://github.com/downloads/richardwilly98/elasticsearch-river-mongodb/elasticsearch-river-mongodb-1.6.4.zip -install river-mongodb
+  - sleep 3
+  - sudo service elasticsearch restart
   - sleep 3
 
 notifications:
