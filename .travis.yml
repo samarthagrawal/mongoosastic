@@ -11,5 +11,5 @@ notifications:
     - james.r.carr@gmail.com
 
 services:
-  - mongodb
+  - mongod
   - elasticsearch
