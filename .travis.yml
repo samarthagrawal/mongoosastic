@@ -10,9 +10,9 @@ before_install:
   - sudo touch /var/log/mongodb1.log 
   - sudo touch /var/log/mongodb2.log 
   - sleep 3
-  - sudo ./var/lib/elasticsearch/bin/plugin -install elasticsearch/elasticsearch-mapper-attachments/1.6.0
+  - sudo /var/lib/elasticsearch/bin/plugin -install elasticsearch/elasticsearch-mapper-attachments/1.6.0
   - sleep 3
-  - sudo ./var/lib/elasticsearch/bin/plugin-url https://github.com/downloads/richardwilly98/elasticsearch-river-mongodb/elasticsearch-river-mongodb-1.6.4.zip -install river-mongodb
+  - sudo /var/lib/elasticsearch/bin/plugin-url https://github.com/downloads/richardwilly98/elasticsearch-river-mongodb/elasticsearch-river-mongodb-1.6.4.zip -install river-mongodb
   - sleep 3
   - sudo service elasticsearch start
   - sleep 3
