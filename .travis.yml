@@ -16,7 +16,7 @@ before_install:
   - sleep 3
   - echo 'rs.initiate()' | mongo
   - sleep 3
-  - elasticsearch
+  - sudo service elasticsearch start
   - sleep 3
   - sudo $ES_HOME/bin/plugin -install elasticsearch/elasticsearch-mapper-attachments/1.6.0
   - sleep 3
