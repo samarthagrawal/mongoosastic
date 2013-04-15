@@ -3,9 +3,9 @@ node_js:
   - 0.6
   - 0.8
 before_install:
-  - sudo mkdir /data/r0
-  - sudo mkdir /data/r1
-  - sudo mkdir /data/r2
+  - sudo mkdir -p /data/r0
+  - sudo mkdir -p /data/r1
+  - sudo mkdir -p /data/r2
   - sudo touch /var/log/mongodb0.log 
   - sudo touch /var/log/mongodb1.log 
   - sudo touch /var/log/mongodb2.log 
