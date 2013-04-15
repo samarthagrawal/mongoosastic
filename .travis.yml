@@ -14,7 +14,7 @@ before_install:
   - sudo mongod --replSet foo --port 27018 -fork --quiet --dbpath /data/r1 --logpath /var/log/mongodb1.log 
   - sudo mongod --replSet foo --port 27019 -fork --quiet --dbpath /data/r2 --logpath /var/log/mongodb2.log 
   - sleep 3
-  - sleep env
+  - env
   - sleep 3
   - sudo $ES_PATH/bin/plugin -install elasticsearch/elasticsearch-mapper-attachments/1.6.0
   - sleep 3
